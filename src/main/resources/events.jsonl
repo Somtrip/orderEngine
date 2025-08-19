@@ -1,0 +1,14 @@
+{"eventId":"e1","timestamp":"2025-07-29T10:00:00Z","eventType":"OrderCreated","orderId":"ORD001","customerId":"CUST001","items":[{"itemId":"P001","qty":2},{"itemId":"P002","qty":1}],"totalAmount":150.00}
+{"eventId":"e2","timestamp":"2025-07-29T10:05:00Z","eventType":"PaymentReceived","orderId":"ORD001","amountPaid":50.00}
+{"eventId":"e3","timestamp":"2025-07-29T10:10:00Z","eventType":"PaymentReceived","orderId":"ORD001","amountPaid":100.00}
+{"eventId":"e4","timestamp":"2025-07-29T12:00:00Z","eventType":"ShippingScheduled","orderId":"ORD001","shippingDate":"2025-07-30"}
+
+{"eventId":"e5","timestamp":"2025-07-30T09:00:00Z","eventType":"OrderCreated","orderId":"ORD002","customerId":"CUST002","items":[{"itemId":"P003","qty":1}],"totalAmount":99.99}
+{"eventId":"e6","timestamp":"2025-07-30T09:10:00Z","eventType":"OrderCancelled","orderId":"ORD002","reason":"Customer request"}
+
+{"eventId":"e7","timestamp":"2025-07-30T09:15:00Z","eventType":"PaymentReceived","orderId":"ORD999","amountPaid":10.00}
+{"eventId":"e8","timestamp":"2025-07-30T09:30:00Z","eventType":"ShippingScheduled","orderId":"ORD002","shippingDate":"2025-07-31"}
+
+{"eventId":"e9","timestamp":"2025-07-30T10:00:00Z","eventType":"OrderCreated","orderId":"ORD003","customerId":"CUST003","items":[{"itemId":"P100","qty":3}],"totalAmount":300.00}
+{"eventId":"e10","timestamp":"2025-07-30T10:05:00Z","eventType":"PaymentReceived","orderId":"ORD003","amount":300.00}
+{"eventId":"e11","timestamp":"2025-07-30T11:00:00Z","eventType":"ShippingScheduled","orderId":"ORD003","shippingDate":"2025-07-31"}
