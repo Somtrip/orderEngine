@@ -1,0 +1,149 @@
+{
+  "info": {
+    "name": "OrderEngine",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Order",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"eventId\": \"e1\",\n    \"timestamp\": \"2025-07-29T10:00:00Z\",\n    \"eventType\": \"OrderCreated\",\n    \"orderId\": \"ORD100\",\n    \"customerId\": \"CUST100\",\n    \"items\": [{\"itemId\": \"P001\", \"qty\": 2}],\n    \"totalAmount\": 100.00\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/events",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["events"]
+        }
+      }
+    },
+    {
+      "name": "Partial Payment",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"eventId\": \"e2\",\n    \"timestamp\": \"2025-07-29T10:05:00Z\",\n    \"eventType\": \"PaymentReceived\",\n    \"orderId\": \"ORD100\",\n    \"amountPaid\": 50.00\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/events",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["events"]
+        }
+      }
+    },
+    {
+      "name": "Full Payment",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"eventId\": \"e3\",\n    \"timestamp\": \"2025-07-29T10:10:00Z\",\n    \"eventType\": \"PaymentReceived\",\n    \"orderId\": \"ORD100\",\n    \"amountPaid\": 50.00\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/events",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["events"]
+        }
+      }
+    },
+    {
+      "name": "Schedule Shipping",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"eventId\": \"e4\",\n    \"timestamp\": \"2025-07-29T12:00:00Z\",\n    \"eventType\": \"ShippingScheduled\",\n    \"orderId\": \"ORD100\",\n    \"shippingDate\": \"2025-07-30\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/events",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["events"]
+        }
+      }
+    },
+    {
+      "name": "Cancel Order",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"eventId\": \"e5\",\n    \"timestamp\": \"2025-07-29T12:10:00Z\",\n    \"eventType\": \"OrderCancelled\",\n    \"orderId\": \"ORD100\",\n    \"reason\": \"Customer changed mind\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/events",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["events"]
+        }
+      }
+    },
+    {
+      "name": "Get All Orders",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/events",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["events"]
+        }
+      }
+    },
+    {
+      "name": "Get Order by ID",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/events/ORD100",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["events", "ORD100"]
+        }
+      }
+    }
+  ]
+}
